@@ -5,7 +5,6 @@
   <title>Your Name - Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Basic reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -29,50 +28,56 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     }
 
-    /* Header */
-    .header {
+    header {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 15px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
     }
 
-    .header-main {
-      flex: 2;
-    }
-
-    .header-main h1 {
+    header h1 {
       font-size: 2rem;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
-    .header-main h2 {
+    header h2 {
       font-size: 1rem;
       font-weight: 400;
       color: #666;
     }
 
-    .header-contact {
-      flex: 1;
-      text-align: right;
+    nav {
+      margin-top: 10px;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #dde5ff;
+      background: #f0f4ff;
+      color: #0077cc;
+      text-decoration: none;
       font-size: 0.9rem;
     }
 
-    .header-contact a {
-      color: #0077cc;
-      text-decoration: none;
+    .nav-list a:hover {
+      background: #e2ebff;
     }
 
-    .header-contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* Sections */
     .section {
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
 
     .section-title {
@@ -90,219 +95,55 @@
       margin-bottom: 8px;
     }
 
-    /* Two-column layout for main body on larger screens */
-    .content {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-    }
-
-    /* Experience / Education items */
-    .item {
-      margin-bottom: 15px;
-    }
-
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 4px;
-      font-weight: 600;
-    }
-
-    .item-subtitle {
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    .item-date {
-      font-size: 0.85rem;
-      color: #777;
-    }
-
-    .item ul {
-      margin: 5px 0 0 18px;
-      font-size: 0.9rem;
-    }
-
-    /* Skills list */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      list-style: none;
-      margin-top: 5px;
-    }
-
-    .skills-list li {
-      background: #f0f4ff;
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 0.85rem;
-      border: 1px solid #dde5ff;
-    }
-
-    /* Small text */
     .small {
       font-size: 0.85rem;
       color: #777;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-
-      .header-contact {
-        text-align: left;
+      header {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-main">
+    <header>
+      <div>
         <h1>Your Name</h1>
         <h2>Job Title / Profession</h2>
       </div>
-      <div class="header-contact">
-        <div>City, State · Country</div>
-        <div><a href="tel:+10000000000">+1 (000) 000-0000</a></div>
-        <div><a href="mailto:you@example.com">you@example.com</a></div>
-        <div><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></div>
-        <div><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></div>
+      <div>
+        <div class="small">City, State · Country</div>
+        <div class="small"><a href="mailto:you@example.com">you@example.com</a></div>
       </div>
     </header>
 
-    <!-- SUMMARY -->
     <section class="section">
-      <div class="section-title">Summary</div>
+      <div class="section-title">Welcome</div>
       <p>
-        Short professional summary (2–4 sentences). Mention your years of experience,
-        key skills, and what kind of roles you’re looking for.
+        This site is a simple multi-page resume. Use the links
+        below to navigate to different sections.
       </p>
     </section>
 
-    <div class="content">
-      <!-- LEFT COLUMN -->
-      <div>
-        <!-- EXPERIENCE -->
-        <section class="section">
-          <div class="section-title">Experience</div>
+    <nav class="section">
+      <div class="section-title">Pages</div>
+      <ul class="nav-list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-          <div class="item">
-            <div class="item-header">
-              <span>Senior Job Title · Company Name</span>
-              <span class="item-date">Jan 2020 – Present · City, Country</span>
-            </div>
-            <div class="item-subtitle">Short description of the role or team.</div>
-            <ul>
-              <li>Key achievement or responsibility #1 with measurable result.</li>
-              <li>Key achievement or responsibility #2 with measurable result.</li>
-              <li>Key achievement or responsibility #3 with measurable result.</li>
-            </ul>
-          </div>
-
-          <div class="item">
-            <div class="item-header">
-              <span>Previous Job Title · Company Name</span>
-              <span class="item-date">Jun 2015 – Dec 2019 · City, Country</span>
-            </div>
-            <div class="item-subtitle">Optional short description of the role.</div>
-            <ul>
-              <li>Key achievement or responsibility #1.</li>
-              <li>Key achievement or responsibility #2.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section class="section">
-          <div class="section-title">Education</div>
-
-          <div class="item">
-            <div class="item-header">
-              <span>Degree · University Name</span>
-              <span class="item-date">Year – Year</span>
-            </div>
-            <div class="item-subtitle">Major / Specialization</div>
-            <p class="small">Optional: GPA, honors, relevant coursework.</p>
-          </div>
-        </section>
-
-        <!-- PROJECTS (OPTIONAL) -->
-        <section class="section">
-          <div class="section-title">Projects</div>
-
-          <div class="item">
-            <div class="item-header">
-              <span>Project Name</span>
-              <span class="item-date">Year</span>
-            </div>
-            <div class="item-subtitle">
-              Technologies: HTML, CSS, JavaScript
-            </div>
-            <ul>
-              <li>Short description of what the project does and your role.</li>
-              <li>Highlight any interesting technical or business result.</li>
-            </ul>
-          </div>
-        </section>
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <aside>
-        <!-- SKILLS -->
-        <section class="section">
-          <div class="section-title">Skills</div>
-          <strong>Technical</strong>
-          <ul class="skills-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>SQL</li>
-            <li>Python</li>
-          </ul>
-
-          <strong>Tools</strong>
-          <ul class="skills-list">
-            <li>Git</li>
-            <li>VS Code</li>
-            <li>Figma</li>
-          </ul>
-
-          <strong>Soft Skills</strong>
-          <ul class="skills-list">
-            <li>Teamwork</li>
-            <li>Communication</li>
-            <li>Problem-Solving</li>
-          </ul>
-        </section>
-
-        <!-- CERTIFICATIONS -->
-        <section class="section">
-          <div class="section-title">Certifications</div>
-          <p><strong>Certification Name</strong> – Issuer (Year)</p>
-          <p><strong>Another Certification</strong> – Issuer (Year)</p>
-        </section>
-
-        <!-- LANGUAGES -->
-        <section class="section">
-          <div class="section-title">Languages</div>
-          <p>English – Native / Fluent</p>
-          <p>Russian – Native / Fluent</p>
-          <p>Other – Level</p>
-        </section>
-      </aside>
-    </div>
-
-    <!-- FOOTER NOTE -->
     <section class="section">
       <p class="small">
-        *References available upon request.*
+        Tip: open each page and replace the placeholder text with
+        your real content.
       </p>
     </section>
   </div>
