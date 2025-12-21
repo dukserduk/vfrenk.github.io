@@ -105,10 +105,22 @@
       position: absolute;
       top: 10px;
       right: 10px;
-      width: 50px; /* Adjust the size as needed */
-      height: 50px; /* Adjust the size as needed */
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       object-fit: cover;
+      filter: brightness(1.25) contrast(1.05) saturate(1.05);
+      transition: filter 180ms ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .profile-photo-link {
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .profile-photo-link:hover .profile-photo {
+      filter: brightness(1.35) contrast(1.1) saturate(1.08);
     }
 
     @media (max-width: 768px) {
@@ -129,14 +141,18 @@
         <div class="small">San Ramon, CA </div>
         <div class="small"><a href="mailto:vfautomation@gmail.com">vfautomation@gmail.com</a></div>
       </div>
-      <img src="path-to-your-photo.jpg" alt="Your Photo" class="profile-photo"> <!-- Added image element -->
+      <div>
+        <a href="Photos/VFphoto.jpg" target="_blank" rel="noopener noreferrer" class="profile-photo-link">
+          <img src="Photos/VFphoto.jpg" alt="Your Photo" class="profile-photo">
+        </a>
+      </div>
+      
     </header>
 
     <section class="section">
       <div class="section-title">Professional Summary</div>
       <p>
-        Senior software engineering leader with extensive experience designing and delivering enterprise-scale applications in regulated and data-intensive environments. Proven expertise in appli[...]
-
+        Principal Application Developer with deep experience in enterprise-scale application development, Azure DevOps administration, and CI/CD automation. Proven expertise in YAML-based pipeline creation, automated testing (unit, integration, data verification, and UI), and delivering reliable, high-quality systems in data-driven and regulated environments. Recognized for solving complex technical challenges, improving software quality, mentoring teams, and building scalable solutions that deliver measurable business value.
 
       </p>
     </section>
@@ -149,12 +165,13 @@
         <li><a href="projects.html">Projects</a></li>
         <li><a href="education.html">Education</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="photos.html">Photos</a></li>
       </ul>
     </nav>
 
     <section class="section">
       <p class="small">
-        https://www.linkedin.com/in/frenklakh/
+        <a href="https://www.linkedin.com/in/frenklakh/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/frenklakh/</a>
       </p>
     </section>
   </div>

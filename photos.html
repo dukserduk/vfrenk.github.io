@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photos — VICTOR FRENKLAKH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:#f4f4f4; color:#222; padding:20px; }
+    .container { max-width:900px; margin:0 auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.08); }
+    header { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px; }
+    header h1 { font-size:1.25rem; }
+    .nav-list { list-style:none; display:flex; gap:8px; }
+    .nav-list a { display:inline-block; padding:6px 10px; border-radius:999px; background:#f0f4ff; color:#0077cc; text-decoration:none; border:1px solid #dde5ff; }
+    .section-title { font-size:1.1rem; font-weight:600; margin-bottom:10px; color:#333; }
+    .photos-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .photos-grid a { display:block; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+    .photos-grid img { width:100%; height:160px; object-fit:cover; display:block; transition:transform .18s ease, filter .18s ease; filter:brightness(1.05) saturate(1.02); }
+    .photos-grid a:hover img { transform:scale(1.03); filter:brightness(1.12) saturate(1.06); }
+    @media (max-width:768px){ .photos-grid{ grid-template-columns:repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Photos</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Core Skills</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="section-title">Gallery</div>
+      <div class="photos-grid">
+        <a href="photos/photo1.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo1.jpg" alt="Photo 1"></a>
+        <a href="photos/photo2.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo2.jpg" alt="Photo 2"></a>
+        <a href="photos/photo3.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo3.jpg" alt="Photo 3"></a>
+        <a href="photos/photo4.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo4.jpg" alt="Photo 4"></a>
+        <a href="photos/photo5.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo5.jpg" alt="Photo 5"></a>
+        <a href="photos/photo6.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo6.jpg" alt="Photo 6"></a>
+        <a href="photos/photo7.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo7.jpg" alt="Photo 7"></a>
+        <a href="photos/photo8.jpg" target="_blank" rel="noopener noreferrer"><img src="photos/photo8.jpg" alt="Photo 8"></a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
