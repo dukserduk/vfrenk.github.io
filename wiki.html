@@ -16,7 +16,7 @@
     .section-title { font-weight:600; font-size:1.05rem; margin-bottom:8px; color:#333; }
     .small { font-size:0.9rem; color:#666; }
 
-    .music-controls { margin-top: 10px; }
+    .music-controls { position: fixed; right: 20px; bottom: 20px; z-index: 1000; }
     .music-button {
       padding: 6px 12px;
       border-radius: 999px;
@@ -47,6 +47,9 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+      <div class="music-controls">
+        <button id="music-toggle" class="music-button" type="button">Play Music</button>
+      </div>
     </header>
 
     <section class="section">
