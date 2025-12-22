@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Historical family photographs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f4f4f4;color:#222;padding:20px}
+    .container{max-width:1000px;margin:0 auto;background:#fff;padding:28px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+    header h1{font-size:1.25rem}
+    .nav-list{list-style:none;display:flex;gap:8px}
+    .nav-list a{padding:6px 10px;border-radius:999px;border:1px solid #dde5ff;background:#f0f4ff;color:#0077cc;text-decoration:none}
+    .section-title{font-size:1.05rem;font-weight:600;margin-bottom:12px;color:#333}
+    .photos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .photos-grid a{display:block;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+    .photos-grid img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .18s ease,filter .18s ease}
+    .photos-grid a:hover img{transform:scale(1.03);filter:brightness(1.08)}
+
+    /* Lightbox */
+    .lightbox-overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.8);z-index:1200;padding:24px}
+    .lightbox-overlay.open{display:flex}
+    .lightbox-content{max-width:1200px;max-height:90vh;position:relative;display:flex;align-items:center;justify-content:center}
+    .lightbox-content img{max-width:100%;max-height:100%;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+    .lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:0;color:#fff;padding:10px;border-radius:6px;cursor:pointer}
+    .lightbox-close{top:16px;right:16px;transform:none}
+    .lightbox-prev{left:-60px}
+    .lightbox-next{right:-60px}
+    .lightbox-caption{position:absolute;left:0;right:0;bottom:-42px;color:#ddd;text-align:center;font-size:0.95rem}
+    @media(max-width:900px){.lightbox-prev{left:8px}.lightbox-next{right:8px}}
+    body.lightbox-open{overflow:hidden}
+    @media(max-width:768px){.photos-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Historical family photographs</h1>
+        <div class="small">A curated gallery</div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="photos.html">Gallery</a></li>
+          <li><a href="wiki.html">Wiki</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="section">
+      <div class="section-title">Gallery (24)</div>
+      <div class="photos-grid">
+        <a href="photos/photo1.jpg" class="lightbox-link" data-index="0"><img src="photos/photo1.jpg" alt="Photo 1"></a>
+        <a href="photos/photo2.jpg" class="lightbox-link" data-index="1"><img src="photos/photo2.jpg" alt="Photo 2"></a>
+        <a href="photos/photo3.jpg" class="lightbox-link" data-index="2"><img src="photos/photo3.jpg" alt="Photo 3"></a>
+        <a href="photos/photo4.jpg" class="lightbox-link" data-index="3"><img src="photos/photo4.jpg" alt="Photo 4"></a>
+        <a href="photos/photo5.jpg" class="lightbox-link" data-index="4"><img src="photos/photo5.jpg" alt="Photo 5"></a>
+        <a href="photos/photo6.jpg" class="lightbox-link" data-index="5"><img src="photos/photo6.jpg" alt="Photo 6"></a>
+        <a href="photos/photo7.jpg" class="lightbox-link" data-index="6"><img src="photos/photo7.jpg" alt="Photo 7"></a>
+        <a href="photos/photo8.jpg" class="lightbox-link" data-index="7"><img src="photos/photo8.jpg" alt="Photo 8"></a>
+        <a href="photos/photo9.jpg" class="lightbox-link" data-index="8"><img src="photos/photo9.jpg" alt="Photo 9"></a>
+        <a href="photos/photo10.jpg" class="lightbox-link" data-index="9"><img src="photos/photo10.jpg" alt="Photo 10"></a>
+        <a href="photos/photo11.jpg" class="lightbox-link" data-index="10"><img src="photos/photo11.jpg" alt="Photo 11"></a>
+        <a href="photos/photo12.jpg" class="lightbox-link" data-index="11"><img src="photos/photo12.jpg" alt="Photo 12"></a>
+        <a href="photos/photo13.jpg" class="lightbox-link" data-index="12"><img src="photos/photo13.jpg" alt="Photo 13"></a>
+        <a href="photos/photo14.jpg" class="lightbox-link" data-index="13"><img src="photos/photo14.jpg" alt="Photo 14"></a>
+        <a href="photos/photo15.jpg" class="lightbox-link" data-index="14"><img src="photos/photo15.jpg" alt="Photo 15"></a>
+        <a href="photos/photo16.jpg" class="lightbox-link" data-index="15"><img src="photos/photo16.jpg" alt="Photo 16"></a>
+        <a href="photos/photo17.jpg" class="lightbox-link" data-index="16"><img src="photos/photo17.jpg" alt="Photo 17"></a>
+        <a href="photos/photo18.jpg" class="lightbox-link" data-index="17"><img src="photos/photo18.jpg" alt="Photo 18"></a>
+        <a href="photos/photo19.jpg" class="lightbox-link" data-index="18"><img src="photos/photo19.jpg" alt="Photo 19"></a>
+        <a href="photos/photo20.jpg" class="lightbox-link" data-index="19"><img src="photos/photo20.jpg" alt="Photo 20"></a>
+        <a href="photos/photo21.jpg" class="lightbox-link" data-index="20"><img src="photos/photo21.jpg" alt="Photo 21"></a>
+        <a href="photos/photo22.jpg" class="lightbox-link" data-index="21"><img src="photos/photo22.jpg" alt="Photo 22"></a>
+        <a href="photos/photo23.jpg" class="lightbox-link" data-index="22"><img src="photos/photo23.jpg" alt="Photo 23"></a>
+        <a href="photos/photo24.jpg" class="lightbox-link" data-index="23"><img src="photos/photo24.jpg" alt="Photo 24"></a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+    <div class="lightbox-content" role="dialog" aria-modal="true">
+      <button class="lightbox-close" aria-label="Close">✕</button>
+      <button class="lightbox-prev" aria-label="Previous">◀</button>
+      <div class="lightbox-inner">
+        <img id="lightbox-image" src="" alt="">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-next" aria-label="Next">▶</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const links = Array.from(document.querySelectorAll('.lightbox-link'));
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-image');
+      const caption = document.getElementById('lightbox-caption');
+      const btnClose = document.querySelector('.lightbox-close');
+      const btnPrev = document.querySelector('.lightbox-prev');
+      const btnNext = document.querySelector('.lightbox-next');
+      let current = 0;
+
+      function open(index){
+        const link = links[index];
+        if(!link) return;
+        const href = link.getAttribute('href');
+        const alt = link.querySelector('img')?.getAttribute('alt') || '';
+        img.src = href;
+        img.alt = alt;
+        caption.textContent = alt;
+        current = index;
+        lightbox.classList.add('open');
+        document.body.classList.add('lightbox-open');
+        lightbox.setAttribute('aria-hidden','false');
+      }
+
+      function close(){
+        lightbox.classList.remove('open');
+        document.body.classList.remove('lightbox-open');
+        lightbox.setAttribute('aria-hidden','true');
+        img.src = '';
+      }
+
+      function showPrev(){ open((current - 1 + links.length) % links.length); }
+      function showNext(){ open((current + 1) % links.length); }
+
+      links.forEach((a, i) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          open(i);
+        });
+      });
+
+      btnClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', (e)=>{ e.stopPropagation(); showPrev(); });
+      btnNext.addEventListener('click', (e)=>{ e.stopPropagation(); showNext(); });
+
+      lightbox.addEventListener('click', (e)=>{
+        if(e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e)=>{
+        if(lightbox.classList.contains('open')){
+          if(e.key === 'Escape') close();
+          if(e.key === 'ArrowLeft') showPrev();
+          if(e.key === 'ArrowRight') showNext();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
